@@ -1,0 +1,210 @@
+/* Tailwind Config */
+@import url('https://cdn.tailwindcss.com');
+
+/* Custom Colors */
+:root {
+    --spa-pink: #F8BBD9;
+    --spa-rose: #F4A6D1;
+    --spa-light: #FEF7F7;
+    --spa-accent: #E91E63;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Custom Classes */
+.gradient-bg {
+    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+.hero-bg {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(233, 30, 99, 0.1);
+}
+
+/* Modal mobile optimizations */
+@media (max-width: 640px) {
+    #modalContent {
+        max-height: 90vh;
+    }
+    
+    #modalBody {
+        max-height: calc(90vh - 140px);
+    }
+}
+
+/* Smooth scrolling for modal content */
+#modalBody {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for modal */
+#modalBody::-webkit-scrollbar {
+    width: 4px;
+}
+
+#modalBody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+}
+
+#modalBody::-webkit-scrollbar-thumb {
+    background: #E91E63;
+    border-radius: 2px;
+}
+
+#modalBody::-webkit-scrollbar-thumb:hover {
+    background: #C2185B;
+}
+
+/* Animation Classes */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Service Description Hover Effect */
+.service-description {
+    transition: opacity 0.3s ease;
+}
+
+/* Form Focus States */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #E91E63;
+    border-color: transparent;
+}
+
+/* Button Hover Effects */
+.btn-primary {
+    background-color: #E91E63;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #C2185B;
+    transform: scale(1.05);
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.5s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Text Selection */
+::selection {
+    background-color: #E91E63;
+    color: white;
+}
+
+
+/* Mobile Menu Styles */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+#mobile-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#mobile-menu.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* Mobile Menu Button Animation */
+#mobile-menu-button {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu-button:hover {
+    background-color: rgba(233, 30, 99, 0.1);
+    border-radius: 8px;
+}
+
+/* Mobile Menu Links */
+#mobile-menu a {
+    transition: all 0.2s ease;
+}
+
+#mobile-menu a:hover {
+    transform: translateX(4px);
+}
+
+/* Mobile Menu Icons */
+#menu-icon, #close-icon {
+    transition: all 0.3s ease;
+}
+
+/* Logo Styles */
+.logo-container {
+    transition: all 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.05);
+}
+
+.logo-container img {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(233, 30, 99, 0.1));
+}
+
+.logo-container:hover img {
+    filter: drop-shadow(0 4px 8px rgba(233, 30, 99, 0.2));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Ensure mobile menu is above other content */
+    #mobile-menu {
+        position: relative;
+        z-index: 40;
+    }
+}
