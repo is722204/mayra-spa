@@ -458,32 +458,6 @@ function validateForm(data) {
     return true;
 }
 
-// Create WhatsApp message with form data
-function createWhatsAppMessage(data) {
-    const message = `¡Hola! Me interesa solicitar una cita en Mandrade Spa.
-
-📋 *Información de contacto:*
-• Nombre: ${data.nombre}
-• Teléfono: ${data.telefono}
-• Servicio de interés: ${data.servicio}
-
-💬 *Mensaje:*
-${data.mensaje || 'Sin mensaje adicional'}
-
-¡Espero su respuesta! 😊`;
-
-    return encodeURIComponent(message);
-}
-
-// Redirect to WhatsApp
-function redirectToWhatsApp(message) {
-    const phoneNumber = '523318234234'; // Número de WhatsApp sin el +
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    
-    // Open WhatsApp in a new tab/window
-    window.open(whatsappUrl, '_blank');
-}
-
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for navigation links

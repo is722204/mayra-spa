@@ -477,7 +477,7 @@ ${data.mensaje || 'Sin mensaje adicional'}
 
 // Redirect to WhatsApp
 function redirectToWhatsApp(message) {
-    const phoneNumber = '523318234234'; // Número de WhatsApp sin el +
+    const phoneNumber = '523311116007'; // Número de WhatsApp sin el +
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     
     // Open WhatsApp in a new tab/window
